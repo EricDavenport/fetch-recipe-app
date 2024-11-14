@@ -1,1 +1,17 @@
+import Foundation
 
+struct Recipe: Identifiable, Codable {
+    let id: String
+    let cuisine: String
+    let name: String
+    let photoURLSmall: URL?
+    let photoURLLarge: URL?
+
+    enum CodingKeys: String, CodingKey {
+        case id = "uuid"
+        case cuisine
+        case name
+        case photoURLSmall = "photo_url_small"
+        case photoURLLarge = "photo_url_large"
+    }
+}
