@@ -4,7 +4,7 @@ import SwiftUI
 struct FetchRecipeAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RecipeListView()
         }
     }
 }
