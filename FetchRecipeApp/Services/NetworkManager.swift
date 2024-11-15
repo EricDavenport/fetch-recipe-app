@@ -1,6 +1,6 @@
 import Foundation
 
-class NetworkManager {
+class NetworkManager: ObservableObject {
     static let shared = NetworkManager()
 
     func fetchRecipes(from urlString: String) async throws -> [Recipe] {

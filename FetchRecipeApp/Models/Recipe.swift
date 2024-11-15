@@ -8,8 +8,8 @@ struct Recipe: Identifiable, Codable {
     let id: String
     let cuisine: String
     let name: String
-    let photoURLSmall: URL?
-    let photoURLLarge: URL?
+    let photoURLSmall: String?
+    let photoURLLarge: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "uuid"

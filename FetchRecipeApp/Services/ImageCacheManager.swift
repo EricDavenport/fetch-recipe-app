@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-class ImageCacheManager {
+class ImageCacheManager: ObservableObject {
     private let cache = NSCache<NSString, UIImage>()
     private let fileManager = FileManager.default
     private let diskCacheDirectory: URL

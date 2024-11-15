@@ -5,21 +5,27 @@ import SwiftUI
 class RecipeViewModel: ObservableObject {
     @Published var recipes = [Recipe]()
     @Published var isLoading = false
-    @Published var errorMessage: String?
+    @Published var vmError: CustomError?
 
     private let networkManager = NetworkManager.shared
 
-    func loadRecipes() async {
+    func fetchRecipes() async {
         isLoading = true
-        errorMessage = nil
+        vmError = nil
 
         do {
-            // 'recipes' is already an array, so no further transormationis required
-            recipes = try await networkManager.fetchRecipes(from: Constants.allRecipeURL)
-        } catch let error as CustomError {
-            errorMessage = error.localizedDescription
+            let fetchRecipes = try await networkManager.fetchRecipes(from: Constants.allRecipeURL)
+            recipes = fetchRecipes
+
+            if recipes.isEmpty {
+                vmError = .emptyData
+            }
+        } catch let customError as CustomError {
+            vmError = customError
+            recipes = []
         } catch {
-            errorMessage = CustomError.unknownError.localizedDescription
+            vmError = .unknownError
+            recipes = []
         }
 
         isLoading = false
