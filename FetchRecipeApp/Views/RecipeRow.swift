@@ -29,18 +29,14 @@ struct RecipeRow: View {
     }
 }
 
-//#Preview {
-//    RecipeRow()
-//}
-// Preview for SwiftUI Canvas
 struct RecipeRow_Previews: PreviewProvider {
     static var previews: some View {
         RecipeRow(recipe: Recipe(
-            id: "eed6005f-f8c8-451f-98d0-4088e2b40eb6",
-            cuisine: "Italian",
-            name: "Spaghetti Carbonara",
-            photoURLSmall: "https://some.url/small.jpg",
-            photoURLLarge: "https://some.url/large.jpg"
+            id: "8938f16a-954c-4d65-953f-fa069f3f1b0d",
+            cuisine: "British",
+            name: "Blackberry Fool",
+            photoURLSmall: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ff52841a-df5b-498c-b2ae-1d2e09ea658d/small.jpg",
+            photoURLLarge: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/ff52841a-df5b-498c-b2ae-1d2e09ea658d/large.jpg"
         ))
         .previewLayout(.sizeThatFits)
         .padding()

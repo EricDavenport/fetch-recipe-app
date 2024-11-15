@@ -16,7 +16,8 @@ struct AsyncImageView: View {
             } else if isLoading {
                 ProgressView()
                     .frame(width: 60, height: 60)
-            } else {
+            }
+            else {
                 Image(systemName: "exclamationmark.triangle")
                     .resizable()
                     .scaledToFit()
