@@ -46,6 +46,7 @@ struct AsyncImageView: View {
             image = nil
         }
         isLoading = false
+        print(loadError!.localizedDescription)
     }
 }
 
