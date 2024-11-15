@@ -1,5 +1,9 @@
 import Foundation
 
+struct RecipeResponse: Decodable {
+    let recipes: [Recipe]
+}
+
 struct Recipe: Identifiable, Codable {
     let id: String
     let cuisine: String
